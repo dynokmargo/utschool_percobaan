@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contoh DOM Method</title>
+</head>
+<body>
+    <button id="myButton">Klik Saya!</button>
+    <p id="myMessage"></p>
+
+    <script>
+        let buttonElement = document.getElementById('myButton');
+        buttonElement.onclick = function(){
+            let messageElement = document.getElementById('myMessage');
+            messageElement.innerText = 'Halo, saya adalah siswa UT School';
+
+        };
+    </script>
+</body>
+</html>

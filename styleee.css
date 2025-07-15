@@ -1,0 +1,85 @@
+/* Umum */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    margin: 0;
+    padding: 20px;
+}
+
+.header1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #4a90e2;
+    color: white;
+    padding: 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+/* Layout tabel */
+form {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    background-color: white;
+    border-collapse: separate;
+    border-spacing: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Input dan Select */
+input[type="text"],
+input[type="number"],
+select {
+    padding: 6px 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+
+/* Tombol */
+button,
+input[type="submit"] {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4a90e2;
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+/* Error */
+td[id^="error_"] {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+
+/* Indeks Nilai */
+#indeks_nilai {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}

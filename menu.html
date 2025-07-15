@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #e1bee7);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+
+        .tabs button {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            background: #ccc;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tabs button.active {
+            background: #4a90e2;
+            color: white;
+        }
+
+        .menu-section {
+            display: none;
+        }
+
+        .menu-section.active {
+            display: block;
+        }
+
+        .menu-item {
+            margin: 6px 0;
+        }
+
+        .menu-item input[type="checkbox"] {
+            display: none;
+        }
+
+        .menu-item label {
+            display: block;
+            background-color: #ececec;
+            padding: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .menu-item input[type="checkbox"]:checked + label {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .total {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .rincian {
+            font-size: 14px;
+            color: #333;
+            margin-top: 8px;
+        }
+
+        .reset-btn {
+            margin-top: 10px;
+            padding: 8px;
+            width: 100%;
+            background-color: #e53935;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .reset-btn:hover {
+            background-color: #c62828;
+        }
+    </style>
+    <script src="javascript.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>🍽️ Daftar Menu 🍽️</h2>
+
+        <div class="tabs">
+            <button onclick="showTab('makanan')" class="active" id="btn-makanan">Makanan</button>
+            <button onclick="showTab('minuman')" id="btn-minuman">Minuman</button>
+        </div>
+
+        <div id="makanan" class="menu-section active">
+            <div class="menu-item"><input type="checkbox" id="mieayam" value="10000" onclick="hitungTotal()"><label for="mieayam">🍜 Mie Ayam - Rp 10.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="bakso" value="12000" onclick="hitungTotal()"><label for="bakso">🍜 Bakso - Rp 12.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="gadogado" value="13000" onclick="hitungTotal()"><label for="gadogado">🥗 Gado-Gado - Rp 13.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="sotolamongan" value="14000" onclick="hitungTotal()"><label for="sotolamongan">🍲 Soto Lamongan - Rp 14.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="sateayam" value="20000" onclick="hitungTotal()"><label for="sateayam">🍢 Sate Ayam - Rp 20.000</label></div>
+        </div>
+
+        <div id="minuman" class="menu-section">
+            <div class="menu-item"><input type="checkbox" id="airmineral" value="3000" onclick="hitungTotal()"><label for="airmineral">💧 Air Mineral - Rp 3.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="esteh" value="5000" onclick="hitungTotal()"><label for="esteh">🥤 Es Teh - Rp 5.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="stmj" value="7000" onclick="hitungTotal()"><label for="stmj">🥛 STMJ - Rp 7.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="espisangijo" value="8000" onclick="hitungTotal()"><label for="espisangijo">🍌 Es Pisang Ijo - Rp 8.000</label></div>
+            <div class="menu-item"><input type="checkbox" id="esbuah" value="9000" onclick="hitungTotal()"><label for="esbuah">🍉 Es Buah - Rp 9.000</label></div>
+        </div>
+
+        <p class="total">Total: <span id="total">Rp 0</span></p>
+        <div class="rincian" id="rincian"></div>
+        <button class="reset-btn" onclick="resetMenu()">Reset</button>
+    </div>
+</body>
+</html>
